@@ -1,0 +1,42 @@
+.site-main {
+  padding: 0;
+
+  // HEADER -----------------------------------------------------------------------------------------
+  .site-header {
+    background-color: #13b9c5;
+
+    .navbar {
+      .nav {
+        .nav-item {
+          .nav-link {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .jerseys {
+      display: block;
+      transform: translateY(-60px);
+
+      img {
+        width: 100%;
+        margin: 0;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+
+    .text {
+      color: #fff;
+
+      h2 {
+        font-size: 237px;
+      }
+      h3 {
+        font-size: 31px;
+      }
+    }
+  }
+  // /HEADER ----------------------------------------------------------------------------------------
+}
