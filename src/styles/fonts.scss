@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Calcio-Demo';
+  src: url('../fonts/Calcio-Demo.eot');
+  src: local('Calcio-Demo'),
+      url('../fonts/Calcio-Demo.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Calcio-Demo.woff2') format('woff2'),
+      url('../fonts/Calcio-Demo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bw Glenn Slab';
+  src: url('../fonts/BwGlennSlab-Regular.eot');
+  src: local('Bw Glenn Slab Regular'), local('BwGlennSlab-Regular'), local('Bw Glenn Slab'),
+      url('../fonts/BwGlennSlab-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/BwGlennSlab-Regular.woff2') format('woff2'),
+      url('../fonts/BwGlennSlab-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bw Glenn Slab';
+  src: url('../fonts/BwGlennSlab-ExtraBold.eot');
+  src: local('Bw Glenn Slab ExtraBold'), local('BwGlennSlab-ExtraBold'), local('Bw Glenn Slab'),
+      url('../fonts/BwGlennSlab-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/BwGlennSlab-ExtraBold.woff2') format('woff2'),
+      url('../fonts/BwGlennSlab-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bw Glenn Slab';
+  src: url('../fonts/BwGlennSlab-ExtraBoldItalic.eot');
+  src: local('Bw Glenn Slab ExtraBold Italic'), local('BwGlennSlab-ExtraBoldItalic'), local('Bw Glenn Slab'),
+      url('../fonts/BwGlennSlab-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/BwGlennSlab-ExtraBoldItalic.woff2') format('woff2'),
+      url('../fonts/BwGlennSlab-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}

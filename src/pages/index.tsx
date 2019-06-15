@@ -1,24 +1,25 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Container, Row, Col, Button } from "react-bootstrap"
+
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import NameForm from "../components/name_form"
+
+import BlockRegister from '../components/register-team'
+import BlockScoreboard from '../components/scoreboard'
+import BlockTournamentRules from '../components/tournament-rules'
+import BlockGallery from '../components/gallery'
+
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <SEO title="Copa Champagnat - Província Marista Brasil Centro-Sul" />
+    
+    <BlockRegister />
+    <BlockScoreboard id="scoreboard" />
+    <BlockTournamentRules />
+    {/* <BlockGallery id="gallery" /> */}
 
-    <NameForm />
-
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

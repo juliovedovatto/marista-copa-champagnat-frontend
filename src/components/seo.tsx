@@ -73,8 +73,6 @@ function SEO({ description, lang, meta, title }: Props) {
     },
   ].concat(meta || []);
 
-  console.log(metaTags);
-
   return (
     <Helmet
       htmlAttributes={{

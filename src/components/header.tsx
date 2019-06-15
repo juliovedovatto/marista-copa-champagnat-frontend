@@ -1,11 +1,13 @@
-import { Link } from "gatsby"
 import React from "react"
 
-import { Container, Row, Col, Navbar } from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 
-import Logo from '../images/logo.png'
+import Menu from './menu'
 import SoccerJerseys from '../images/camisetas.png'
 
+if (typeof window !== 'undefined') {
+  require('smooth-scroll')('.navbar .navbar-nav .nav-link')
+}
 
 interface Props {
   siteTitle: string
@@ -14,40 +16,24 @@ interface Props {
 const Header = ({ siteTitle }: Props) => (
   <div className="site-header">
     <Container as="header">
-      <Row noGutters>
-        <Col lg="4">
-          <Navbar>
-            <ul className="nav">
-              <li className="nav-item"><a className="nav-link" href="#">Inscrições</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Tabela</a></li>
-            </ul>
-          </Navbar>
-        </Col>  
-        <Col lg="4" className="text-center">
-          <img src={Logo} alt={siteTitle} />
-        </Col>  
-        <Col lg="4" className="text-right">
-          <Navbar className="justify-content-end">
-            <ul className="nav">
-              <li className="nav-item"><a className="nav-link" href="#">Regulamento</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Galeria</a></li>
-            </ul>
-          </Navbar>  
-        </Col>  
-      </Row>
+      <Menu siteTitle={siteTitle} />
       <Row noGutters>
         <Col lg="12">
           <picture className="jerseys">
-            <img src={SoccerJerseys} alt="" />
+            <Image src={SoccerJerseys} fluid />
           </picture>
         </Col>
       </Row>  
       <Row noGutters>
         <Col className="text text-center">
-          <h3>Diversos Times vestindo uma só camisa:</h3>
-          <h2>A Marista</h2>
+          <h3 className="title secondary-title text-uppercase">Diversos Times vestindo uma só camisa:</h3>
+          <h2 className="title big-title text-uppercase">A Marista</h2>
         </Col>
       </Row>
+      <div className="soccer-cleat soccer-cleat-shadow d-sm-none d-lg-block"></div>
+      <div className="soccer-cleat d-sm-none d-lg-block"></div>
+      <div className="soccer-horn soccer-horn-shadow d-md-none d-xl-block"></div>
+      <div className="soccer-horn d-md-none d-xl-block"></div>
     </Container>
   </div>
 )
