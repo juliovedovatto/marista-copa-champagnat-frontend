@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
 import React from "react"
-
 import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
+
+import FooterSponsors from './footer-sponsors'
 
 import logoProvincia from '../images/logo-PROVINCIA.png'
 import logoMarista from '../images/logo-GRUPO.png'
@@ -33,9 +33,10 @@ const Footer = () => (
               </Nav.Link>
             </Nav>
           </Navbar>
-        </Col>  
+        </Col>
       </Row>
     </Container>
+    <FooterSponsors />
   </div>
 )
 

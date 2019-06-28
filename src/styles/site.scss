@@ -2,20 +2,28 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins/_breakpoints";
 
+body {
+  background: url(../images/bg-copa.jpg) no-repeat center top #13b9c5;
+  background-size: cover;
+}
+
 .site-main {
   padding: 0;
   overflow-x: hidden;
 
   // HEADER -----------------------------------------------------------------------------------------
   .site-header {
-    background-color: #13b9c5;
     padding-bottom: 60px;
+    background: url(../images/bg-copa.jpg) no-repeat center top #13b9c5;
+    background-size: cover;
     
     > .container {
       position: relative;
     }
 
     .logo {
+      transform: translateX(-1.6vw);
+
       @include media-breakpoint-down(md) {
         width: 75%;
         transform: translateX(-7.6vw);
@@ -140,7 +148,7 @@
       }
 
       &.soccer-horn-shadow {
-        background: url(../images/corneta-shadow.png) no-repeat left top;
+        background: url(../images/corneta-sombra.png) no-repeat left top;
         mix-blend-mode: multiply;
       }
     }
@@ -165,6 +173,7 @@
     }
 
     .cta-button { 
+
       .btn {
         border-radius: 0;
         padding: 10px 25px;
@@ -176,10 +185,14 @@
         background: #e6f2ec;
         color: #143f64;
       }
+      .obs {
+        display: block;
+        font-family: 'Bw Glenn Slab', sans-serif;
+      }
     }
   }
   .subscribe-team-block {
-    background: url(../images/bg-cta-blocx.png) no-repeat center top #113b60;
+    background: url(../images/bg-cta-block.png) no-repeat center top #113b60;
     
     .cta-button {
       .btn {
@@ -189,7 +202,7 @@
   }
   .scoreboard-block {
     background: #c9d643;
-    height: 918px;
+    min-height: 700px;
     color: #fff;
     position: relative;
 
@@ -228,6 +241,67 @@
           width: 300px;
           height: 320px;
           right: -125px;
+        }
+      }
+    }
+
+    .scoreboard-container {
+      position: relative;
+      z-index: 10;
+      margin: 60px 0 90px;
+
+      .title {
+        font-family: 'Bw Glenn Slab';
+        font-weight: 800;
+        line-height: 1.2;
+        font-size: 40px;
+        color: #143f64;
+      }
+
+      .scoreboard {
+        color: #143f64;
+        font-size: 18px;
+        font-family: 'Bw Glenn Slab';
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 60px;
+        padding-right: 30px;
+
+        &:nth-child(2n) {
+          padding-right: 15px;
+          padding-left: 30px;
+        }
+  
+        .scoreboard-group {
+          font-size: inherit;
+          font-weight: inherit;
+          font-family: inherit;
+          color: #fff;
+          font-size: 28px;
+          margin-bottom: 17px;
+        }
+  
+        .scoreboard-team {
+          display: flex;
+  
+          .team-name {
+            font-size: inherit;
+            font-weight: inherit;
+            font-family: inherit;
+            margin: 0;
+            flex-basis: 200px;
+          }
+          .score-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            flex: 1;
+  
+            .score-item {
+              flex: 1;
+            }
+          }
         }
       }
     }
@@ -280,8 +354,9 @@
     }
   }
   .gallery-block {
-    background: #011e39;
-    height: 1098px;
+    background: url(../images/bg-galeria.png) no-repeat center bottom #002240;
+    background-size: 100% auto;
+    min-height: 1098px;
 
     .title {
       color: #ededed;
@@ -291,55 +366,128 @@
         font-size: 31vmin;
       }
     }
+
+    .gallery {
+      margin-top: 10px;
+
+      .gallery-items {
+
+        .gallery-item {
+          margin-bottom: 30px;
+
+          .gallery-image {
+            height: 286px;
+            background: #ddd;
+
+            .react-fancybox {
+              cursor: pointer;
+              height: 100%;
+
+              .thumbnail {
+                height: 100%;
+              }
+
+              .close-btn {
+                cursor: pointer;
+              }
+
+              .box {
+                padding: 0 15px;
+              }
+            }
+
+            img[alt="thumbnail"] {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+              margin-bottom: 0;
+            }
+            img[alt="original"] {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
   }
   // /CONTENT ---------------------------------------------------------------------------------------
   // FOOTER -----------------------------------------------------------------------------------------
   .site-footer {
-    background: url(../images/bg-footer.jpg) no-repeat center top #15b8c5;
+    padding-bottom: 20px;
 
     footer {
       height: 100%;
 
       > .row {
         height: 100%;
-        padding: 67px 0 100px; 
+        padding: 67px 0 60px;
+      }
+    }
+
+    .title {
+      color: #ededed;
+      font-size: 18px;
+      font-family: 'Bw Glenn Slab';
+      font-style: italic;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .navbar {
+      padding: 0;
+      margin-bottom: 25px;
+
+      .site-footer &:last-of-type {
+        margin: 0;
       }
 
-      .title {
-        color: #ededed;
-        font-size: 18px;
-        font-family: 'Bw Glenn Slab';
-        font-style: italic;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 20px;
-      }
+      .navbar-nav {
 
-      .navbar {
-        padding: 0;
-        margin-bottom: 25px;
+        .nav-link {
+          padding: 0 40px 0 0;
 
-        .site-footer &:last-of-type {
-          margin: 0;
-        }
+          &:last-child {
+            padding-right: 0;
+          }
 
-        .navbar-nav {
-
-          .nav-link {
-            padding: 0 40px 0 0;
-  
-            &:last-child {
-              padding-right: 0;
-            }
-  
-            img {
-              margin: 0;
-            }
+          img {
+            margin: 0;
           }
         }
       }
-  
     }
+    
+    .site-footer-sponsors {
+        padding: 0;
+        position: relative;
+
+        .title {
+          position: absolute;
+          top: 10px;
+          left: 0;
+
+          @include media-breakpoint-down(md) {
+            position: static;
+          }
+        }
+
+        .sponsor-list  {
+          @include media-breakpoint-down(md) {
+            display: block !important;
+          }
+
+          picture {
+            display: inline-block;
+          }
+          img {
+            margin: 0;
+
+            @include media-breakpoint-down(xs) {
+            }
+          }
+        }
+    } 
   }
   // /FOOTER ----------------------------------------------------------------------------------------
 }

@@ -15,7 +15,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Copa Champagnat - Província Marista Brasil Centro-Sul" />
     
-    <BlockRegister />
+    <BlockRegister until="2019-06-26 18:00" showUntil={false} />
     <BlockScoreboard id="scoreboard" />
     <BlockTournamentRules />
     {/* <BlockGallery id="gallery" /> */}
