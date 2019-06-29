@@ -2,7 +2,8 @@ import React, { ReactNode } from "react"
 
 import { Container, Row, Col } from "react-bootstrap"
 
-import ScoreboardList from './scoreboard-list'
+// import ScoreboardList from './scoreboard-list'
+import ScoreboardListStatic from './scoreboard-list-static'
 
 interface Props {
   id: string,
@@ -19,8 +20,9 @@ const Component = ({ id }: Props) => (
               <div className="soccer-ball soccer-ball-shadow"></div>
               <div className="soccer-ball"></div>
 
-              <Container className="scoreboard-container">
-                <ScoreboardList />
+              <Container className="scoreboard-container overflow-hidden">
+                <h2 className="title scoreboard-title text-uppercase text-center mt-5 mb-5">Fase dos Grupos</h2>
+                <ScoreboardListStatic />
               </Container>
             </Col>
           </Row>

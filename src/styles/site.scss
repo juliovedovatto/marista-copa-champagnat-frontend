@@ -258,6 +258,12 @@ body {
         color: #143f64;
       }
 
+      .scoreboard-list {}
+
+      .group-type-title {
+        color: #fff;
+      }
+
       .scoreboard {
         color: #143f64;
         font-size: 18px;
@@ -267,11 +273,27 @@ body {
         margin-bottom: 60px;
         padding-right: 30px;
 
+        &:nth-child(odd) {
+          margin-left: 50px;
+
+          @include media-breakpoint-down(md) {
+            margin-left: 0;
+          }
+        }
+
+        @include media-breakpoint-down(md) {
+          padding: 0;
+        }
+
         &:nth-child(2n) {
           padding-right: 15px;
           padding-left: 30px;
+
+          @include media-breakpoint-down(md) {
+            padding: 0;
+          }
         }
-  
+
         .scoreboard-group {
           font-size: inherit;
           font-weight: inherit;
@@ -283,13 +305,14 @@ body {
   
         .scoreboard-team {
           display: flex;
+          margin-bottom: 10px;
   
           .team-name {
             font-size: inherit;
             font-weight: inherit;
             font-family: inherit;
             margin: 0;
-            flex-basis: 200px;
+            flex-basis: 70%;
           }
           .score-list {
             padding: 0;
@@ -299,6 +322,7 @@ body {
             flex: 1;
   
             .score-item {
+              margin: 0;
               flex: 1;
             }
           }
