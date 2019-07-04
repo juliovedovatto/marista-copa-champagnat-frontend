@@ -294,6 +294,16 @@ body {
           }
         }
 
+        .score-titles {
+          .score-title {
+            padding: 0 5px;
+
+            &:first-child {
+              flex-basis: 70%;
+            }
+          }
+        }
+
         .scoreboard-group {
           font-size: inherit;
           font-weight: inherit;
@@ -324,6 +334,68 @@ body {
             .score-item {
               margin: 0;
               flex: 1;
+            }
+          }
+        }
+      }
+
+      .scoreboard-round {
+        .scoreboard-versus {
+          margin-bottom: 40px;
+          font-size: 20px;
+          font-family: 'Bw Glenn Slab';
+          font-weight: 800;
+          line-height: 1.2;
+
+          .team-name {
+            color: #143f64;
+            font-size: inherit;
+            font-weight: inherit;
+            margin: 0;
+          }
+          .versus {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+          }
+        }
+      }
+
+      .glide {
+        position: relative;
+
+        .glide__arrows {
+          .glide__arrow {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            font-size: 50px;
+            font-family: 'Bw Glenn Slab';
+            font-weight: 800;
+            line-height: 1.2;
+            position: absolute;
+            top: -3px;
+
+            &:focus, &:active {
+              outline: 0;
+            }
+
+            &.glide__arrow--left {
+              left: 0;
+            }
+            &.glide__arrow--right {
+              right: 0;
+            }
+          }
+        }
+        .glide__track {
+          transition: height 0.3s ease-in-out;
+
+          .glide__slides {
+            margin: 0;
+
+            .glide__slide {
+              
             }
           }
         }
@@ -544,5 +616,9 @@ body {
   font-family: 'Calcio-Demo';
   font-size: 237px;
   line-height: 1.5;
+}
+.site-tooltip {
+  font-size: 80%;
+  font-family: 'Bw Glenn Slab', sans-serif;
 }
 // /GENERAL USE -------------------------------------------------------------------------------------

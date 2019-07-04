@@ -1,0 +1,24 @@
+{
+  "presets": [
+    "@babel/preset-react", 
+    [
+        "@babel/preset-env",
+        {
+            "modules": false,
+            "corejs": 3,
+            "useBuiltIns": "entry"
+        }
+    ]
+  ],
+  "plugins": [ 
+    "transform-class-properties", 
+    "@babel/plugin-transform-runtime", 
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+          "legacy": true,
+      }
+    ] 
+  ],
+}

@@ -8,13 +8,17 @@ import 'react-fancybox/lib/fancybox.css'
 
 interface Props {
   size?: number
+  onFinish?: Function,
 }
-type State = {
+interface State {
+  items: { [key:string]: any }
+  triggerFinished: boolean
 }
 
 export default class GalleryItems extends Component<Props, State> {
   state = {
-    items: []
+    items: [],
+    triggerFinished: false
   }
 
   // CUSTOM METHODS -------------------------------------------------------------------------------
@@ -28,6 +32,7 @@ export default class GalleryItems extends Component<Props, State> {
       </Col>
     )
   }
+  
 
   // /CUSTOM METHODS ------------------------------------------------------------------------------
 
@@ -39,6 +44,17 @@ export default class GalleryItems extends Component<Props, State> {
       this.setState({
         items: data.data || []
       })
+
+      window.setTimeout(() => {
+        this.setState({ triggerFinished: true })
+      }, 300)
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.triggerFinished) {
+      this.props.onFinish && this.props.onFinish(this.state.items.length)
+      this.setState({ triggerFinished: false })
     }
   }
 

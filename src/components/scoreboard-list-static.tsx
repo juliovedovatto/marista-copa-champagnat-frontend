@@ -1,11 +1,10 @@
-import React, { Component, ReactElement } from "react"
-import { Row, Col, Image } from "react-bootstrap"
-import axios from "axios"
+import React, { ReactElement } from "react"
+import { Row, Col } from "react-bootstrap"
 
 interface Props {
 }
 
-const ScoreboardListStatic = ({}: Props) => (
+const ScoreboardListStatic = ({}: Props): ReactElement => (
   <Row className="scoreboard-list d-flex justify-content-center">
     <Col xs={12} className="text-center">
       <h3 className="title group-type-title mb-5">Masculino</h3>
