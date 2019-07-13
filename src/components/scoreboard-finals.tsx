@@ -19,9 +19,13 @@ export default class ScoreboardFinals extends Component<Props, State> {
     return (
       <Fragment key={`finals-${index}-teams`}>
         <Col md={5}  xs={12} className="scoreboard-versus text-center d-flex justify-content-center align-items-end">
-            <h3 className="team-name">{item.team[0]}</h3>
-            <span className="versus">X</span>
-            <h3 className="team-name">{item.team[1]}</h3>
+            <h3 className={`team-name` + (!item.team[1].trim().length ? ' team-winner' : '' )}>{item.team[0]}</h3>
+          { item.team[1].trim().length ?
+            (<Fragment>
+              <span className="versus">X</span>
+              <h3 className="team-name">{item.team[1]}</h3>
+            </Fragment>) : ''
+          }
         </Col>
       </Fragment>
     )
@@ -50,7 +54,7 @@ export default class ScoreboardFinals extends Component<Props, State> {
         items: data.data || []
       })
 
-      window.setTimeout(() => {
+      setTimeout(() => {
         this.setState({ triggerFinished: true })
       }, 300)
     }

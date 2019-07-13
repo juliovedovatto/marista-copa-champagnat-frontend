@@ -16,7 +16,7 @@ const Menu = ({ siteTitle }: Props) => (
             <Nav.Link href="#register-your-team" className="text-uppercase">Inscrições</Nav.Link>
             <Nav.Link href="#scoreboard" className="text-uppercase">Tabela</Nav.Link>
             <Nav.Link href="#tournament-rules" className="text-uppercase">Regulamento</Nav.Link>
-          {/* <Nav.Link href="#gallery" className="text-uppercase">Galeria</Nav.Link> */}
+          <Nav.Link href="#gallery" className="text-uppercase">Galeria</Nav.Link>
         </Nav>
       </Navbar>
     </Col>
@@ -35,7 +35,7 @@ const Menu = ({ siteTitle }: Props) => (
       <Navbar className="d-none d-sm-block ">
         <Nav className="justify-content-end">
           <Nav.Link href="#tournament-rules" className="text-uppercase">Regulamento</Nav.Link>
-          {/* <Nav.Link href="#gallery" className="text-uppercase">Galeria</Nav.Link> */}
+          <Nav.Link href="#gallery" className="text-uppercase">Galeria</Nav.Link>
         </Nav>
       </Navbar>  
     </Col>  

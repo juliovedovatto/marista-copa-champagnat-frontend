@@ -92,7 +92,7 @@ export default class ScoreboardList extends Component<Props, State> {
       })
     }
 
-    window.setTimeout(() => { this.setState({ triggerFinished: true }) }, 300)
+    setTimeout(() => { this.setState({ triggerFinished: true }) }, 300)
   }
 
   componentDidUpdate() {

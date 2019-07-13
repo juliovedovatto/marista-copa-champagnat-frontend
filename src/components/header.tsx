@@ -5,9 +5,7 @@ import { Container, Row, Col, Image } from "react-bootstrap"
 import Menu from './menu'
 import SoccerJerseys from '../images/camisetas.png'
 
-if (typeof window !== 'undefined') {
-  require('smooth-scroll')('.navbar .navbar-nav .nav-link')
-}
+typeof window !== 'undefined' && require('smooth-scroll')('.navbar .navbar-nav .nav-link')
 
 interface Props {
   siteTitle: string

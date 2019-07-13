@@ -1,10 +1,8 @@
 import React, { Component, ReactElement } from "react"
 import { Row, Col, Image } from "react-bootstrap"
 import axios from "axios"
-import ReactFancyBox from 'react-fancybox'
-
-import 'react-fancybox/lib/fancybox.css'
-
+import { LightgalleryProvider, LightgalleryItem } from 'react-lightgallery';
+import LazyLoad from 'react-lazyload'
 
 interface Props {
   size?: number
@@ -23,16 +21,27 @@ export default class GalleryItems extends Component<Props, State> {
 
   // CUSTOM METHODS -------------------------------------------------------------------------------
 
-  buildGalleryItem(item: object, i: number): React.ReactNode {
+  private _buildGalleryItem(item: object, i: number): ReactElement {
     return (
       <Col key={`gallery-item-${i}`} lg={4} md={6} sm={12} className="gallery-item">
-        <div className="gallery-image">
-          <ReactFancyBox thumbnail={item.thumb_url || item.url}  image={item.url} />
+        <div className="gallery-image" data-index={i}>
+          <LightgalleryItem group="group" src={item.url}>
+            <a href={item.url} onClick={(e) => { e.preventDefault() }}>
+              <LazyLoad placeholder={this._buildPlaceHolder()}>
+                <Image className="thumbnail" src={item.thumb_url || item.url} />
+              </LazyLoad>
+            </a>
+          </LightgalleryItem>
         </div>
       </Col>
     )
   }
-  
+
+  private _buildPlaceHolder(): ReactElement {
+      return (
+        <Image className="thumbnail lazyload" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" />
+      )
+  }
 
   // /CUSTOM METHODS ------------------------------------------------------------------------------
 
@@ -45,7 +54,7 @@ export default class GalleryItems extends Component<Props, State> {
         items: data.data || []
       })
 
-      window.setTimeout(() => {
+      setTimeout(() => {
         this.setState({ triggerFinished: true })
       }, 300)
     }
@@ -60,10 +69,18 @@ export default class GalleryItems extends Component<Props, State> {
 
   render() {
     const { items } = this.state;
+    const lightboxOptions = {
+      mode: 'lg-fade',
+      thumbnail: true,
+      cssEasing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+      addClass: 'gallery-modal'
+    }
 
     return (
       <Row className="gallery-items">
-          { items.map((item, i) => this.buildGalleryItem(item, i)) }
+        <LightgalleryProvider lightgallerySettings={lightboxOptions} galleryClassName="gallery-component">
+          { items.map((item, i) => this._buildGalleryItem(item, i)) }
+        </LightgalleryProvider>
       </Row>
     )
   }
